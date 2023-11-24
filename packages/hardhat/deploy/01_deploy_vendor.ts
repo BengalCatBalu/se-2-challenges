@@ -21,25 +21,25 @@ const deployVendor: DeployFunction = async function (hre: HardhatRuntimeEnvironm
   */
 
   // // Deploy Vendor
-  // const { deployer } = await hre.getNamedAccounts();
-  // const { deploy } = hre.deployments;
-  // const yourToken = await hre.ethers.getContract("YourToken", deployer);
-  // await deploy("Vendor", {
-  //   from: deployer,
+  const { deployer } = await hre.getNamedAccounts();
+  const { deploy } = hre.deployments;
+  const yourToken = await hre.ethers.getContract("YourToken", deployer);
+  await deploy("Vendor", {
+     from: deployer,
   //   // Contract constructor arguments
-  //   args: [yourToken.address],
-  //   log: true,
-  //   // autoMine: can be passed to the deploy function to make the deployment process faster on local networks by
+     args: [yourToken.address],
+     log: true,
+     //autoMine: can be passed to the deploy function to make the deployment process faster on local networks by
   //   // automatically mining the contract deployment transaction. There is no effect on live networks.
-  //   autoMine: true,
-  // });
-  // const vendor = await hre.ethers.getContract("Vendor", deployer);
+     autoMine: true,
+   });
+   const vendor = await hre.ethers.getContract("Vendor", deployer);
 
   // // Transfer tokens to Vendor
-  // await yourToken.transfer(vendor.address, hre.ethers.utils.parseEther("1000"));
+  await yourToken.transfer(vendor.address, hre.ethers.utils.parseEther("1000"));
 
   // // Transfer contract ownership to your frontend address
-  // await vendor.transferOwnership("**YOUR FRONTEND ADDRESS**");
+  await vendor.transferOwnership("0x9274EBBA609CD3365d36ac82EE994d07081cdA87");
 };
 
 export default deployVendor;

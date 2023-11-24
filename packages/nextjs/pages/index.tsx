@@ -30,9 +30,9 @@ const Home: NextPage = () => {
               <p className="text-center text-lg">
                 🌟 The final deliverable is an app that lets users purchase your ERC20 token, transfer it, and sell it
                 back to the vendor. Deploy your contracts on your public chain of choice and then deploy your app to a
-                public webserver. Submit the url on{" "}
-                <a href="https://speedrunethereum.com/" target="_blank" rel="noreferrer" className="underline">
-                  SpeedRunEthereum.com
+                public webserver.
+                <a href="https://sepolia.etherscan.io/address/0x72e389dcfce2ab090747d3018ac8754cb512892f" target="_blank" rel="noreferrer" className="underline">
+                  Contract
                 </a>{" "}
                 !
               </p>
